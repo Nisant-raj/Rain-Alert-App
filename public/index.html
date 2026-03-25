@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rain Alert App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>🌧️ Rain Alert App</h1>
+      <p class="subtitle">Get notified before it rains</p>
+    </header>
+
+    <!-- Status Cards -->
+    <div class="status-cards">
+      <div class="card" id="configCard">
+        <div class="card-icon">⚙️</div>
+        <div class="card-info">
+          <h3>Configuration</h3>
+          <p id="configStatus">Loading...</p>
+        </div>
+      </div>
+      <div class="card" id="notifCard">
+        <div class="card-icon">🔔</div>
+        <div class="card-info">
+          <h3>Notifications</h3>
+          <p id="notifStatus">Not subscribed</p>
+          <button id="subscribeBtn" class="btn btn-small">Enable</button>
+        </div>
+      </div>
+      <div class="card" id="lastCheckCard">
+        <div class="card-icon">🕒</div>
+        <div class="card-info">
+          <h3>Last Check</h3>
+          <p id="lastCheckStatus">Not checked yet</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <div class="actions">
+      <button id="checkNowBtn" class="btn btn-primary">
+        🔍 Check Weather Now
+      </button>
+    </div>
+
+    <!-- Result Panel -->
+    <div id="resultPanel" class="result-panel hidden">
+      <h2 id="resultTitle"></h2>
+      <div id="resultContent"></div>
+    </div>
+
+    <!-- Alert History -->
+    <div class="history-section">
+      <h2>📋 Alert History</h2>
+      <div id="historyList" class="history-list">
+        <p class="empty-state">No alerts yet. Click "Check Weather Now" to start.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

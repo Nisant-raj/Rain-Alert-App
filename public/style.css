@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+/* Status Cards */
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.card-info h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.card-info p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1a73e8, #4fc3f7);
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1565c0, #29b6f6);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-small {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  margin-top: 8px;
+}
+
+.btn-small:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-small.subscribed {
+  background: #2e7d32;
+}
+
+.actions {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Result Panel */
+.result-panel {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+  animation: fadeIn 0.3s ease;
+}
+
+.result-panel.hidden {
+  display: none;
+}
+
+.result-panel h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.result-panel.rain {
+  border-left: 4px solid #f44336;
+}
+
+.result-panel.clear {
+  border-left: 4px solid #4caf50;
+}
+
+/* Rain Table */
+.rain-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.rain-table th,
+.rain-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rain-table th {
+  color: #90caf9;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rain-table td {
+  font-size: 0.9rem;
+}
+
+.rain-table tr:hover td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* History */
+.history-section {
+  margin-top: 12px;
+}
+
+.history-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 14px 18px;
+  border-left: 3px solid #f44336;
+}
+
+.history-item .timestamp {
+  font-size: 0.78rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.history-item .detail {
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  color: #777;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  .rain-table th,
+  .rain-table td {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}

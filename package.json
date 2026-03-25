@@ -1,0 +1,22 @@
+{
+  "name": "rain-alert-app",
+  "version": "1.0.0",
+  "description": "Weather rain alert app with email and push notifications",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.3",
+    "web-push": "^3.6.7"
+  }
+}
